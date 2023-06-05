@@ -9,6 +9,7 @@ void syncWithLocalDirectories(InfoCSV_file& ourInfoFile) {
         OtherDirectory
         , &OtherDirectory::getOtherDirectories
         , &OtherDirectory::getInfo
+        , &OtherDirectory::name
     >(ourInfoFile);
 }
 

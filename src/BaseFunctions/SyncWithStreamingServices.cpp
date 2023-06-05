@@ -9,6 +9,7 @@ void syncWithStreamingService(InfoCSV_file& ourInfoFile) {
         StreamingAPI
         , &StreamingAPI::getStreamingServices
         , &StreamingAPI::getInfo
+        , &StreamingAPI::name
     >(ourInfoFile);
 }
 
