@@ -21,10 +21,10 @@ void baseSyncWith(AudioLibraryInfo& ourInfo) {
     for (auto& source: getSources()) {
         const auto* const source_ptr = source.get();
         const auto sourceInfo = (source_ptr->*getInfo)();
-        const auto differebce = ourInfo.gitDiff(sourceInfo);
+        const auto difference = ourInfo.gitDiff(sourceInfo);
 
         std::unique_ptr<UI_Base> ui = UI_Base::getUI();
-        if (differebce.empty()) {
+        if (difference.empty()) {
             ui->informate(
                 "No differences were found for the "s + source_ptr->*name + "\n"
             );
