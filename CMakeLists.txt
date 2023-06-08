@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.26)
 
 project(AudioSync VERSION 0.1 LANGUAGES CXX)
 
-file(GLOB src_files "./src/**/*.cpp")
+file(GLOB src_files 
+    "./src/**/*.cpp" 
+    "./src/*.cpp" 
+    "./main.cpp"
+)
 
 add_executable(AudioSync ${src_files})
 

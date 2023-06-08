@@ -1,2 +1,2 @@
-cmake -CCMakePreLoad.cmake ./ -B ./build && cmake --build ./build --clean-first
+cmake -CCMakePreLoad.cmake ./ -B ./build && cmake --build ./build
 
