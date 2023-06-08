@@ -5,6 +5,8 @@
 #include <string>
 #include <optional>
 
+#include "Diff.hpp"
+
 namespace AudioSync {
 
 class BaseAudioInfo {
@@ -23,14 +25,12 @@ public:
     bool isDir();
 };
 
-using DiffType = std::map<size_t, std::pair<InfoCSV_field*, InfoCSV_field*>>;
-
 class InfoCSV_file: public std::vector<InfoCSV_field> {
 public:
     static InfoCSV_file getOurInfoFile();
 
 public:
-    DiffType gitDiff(const InfoCSV_file& other) const;
+    Diff::Type gitDiff(const InfoCSV_file& other) const;
 };
 
 }
