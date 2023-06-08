@@ -4,13 +4,13 @@
 
 namespace AudioSync {
 
-void syncWithLocalDirectories(InfoCSV_file& ourInfoFile) {
+void syncWithLocalDirectories(AudioLibraryInfo& ourInfo) {
     baseSyncWith<
         OtherDirectory
         , &OtherDirectory::getOtherDirectories
         , &OtherDirectory::getInfo
         , &OtherDirectory::name
-    >(ourInfoFile);
+    >(ourInfo);
 }
 
 }

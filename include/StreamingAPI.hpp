@@ -4,13 +4,13 @@
 #include <string>
 #include <vector>
 
-#include "InfoCSV.hpp"
+#include "AudioLibraryInfo.hpp"
 
 namespace AudioSync {
 
 class StreamingAPI {
 public:
-    virtual InfoCSV_file getInfo() const = 0;
+    virtual AudioLibraryInfo getInfo() const = 0;
 
     virtual ~StreamingAPI() = default;
 

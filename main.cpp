@@ -1,12 +1,12 @@
 #include <vector>
 
 #include "BaseFunctions.hpp"
-#include "InfoCSV.hpp"
+#include "AudioLibraryInfo.hpp"
 
 int main() {
-    auto ourInfoFile = InfoCSV_file::getOurInfoFile();
-    AudioSync::syncWithStreamingServices(ourInfoFile);
-    AudioSync::syncWithLocalDirectories(ourInfoFile);
+    auto ourInfo = AudioSync::AudioLibraryInfo::getOurAudioLibraryInfo();
+    AudioSync::syncWithStreamingServices(ourInfo);
+    AudioSync::syncWithLocalDirectories(ourInfo);
 
 	return 0;
 }

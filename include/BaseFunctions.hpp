@@ -1,12 +1,12 @@
 #pragma once
 
-class InfoCSV_file;
-
 namespace AudioSync {
 
-void syncWithStreamingServices(InfoCSV_file& ourInfoFile);
+class AudioLibraryInfo;
 
-void syncWithLocalDirectories(InfoCSV_file& ourInfoFile);
+void syncWithStreamingServices(AudioLibraryInfo& ourInfo);
+
+void syncWithLocalDirectories(AudioLibraryInfo& ourInfo);
 
 }
 

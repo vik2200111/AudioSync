@@ -25,12 +25,12 @@ public:
     bool isDir();
 };
 
-class InfoCSV_file: public std::vector<InfoCSV_field> {
+class AudioLibraryInfo: public std::vector<InfoCSV_field> {
 public:
-    static InfoCSV_file getOurInfoFile();
+    static AudioLibraryInfo getOurAudioLibraryInfo();
 
 public:
-    Diff::Type gitDiff(const InfoCSV_file& other) const;
+    Diff::Type gitDiff(const AudioLibraryInfo& other) const;
 };
 
 }

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "InfoCSV.hpp"
+#include "AudioLibraryInfo.hpp"
 
 namespace AudioSync {
 
@@ -13,7 +13,7 @@ public:
     static std::vector<std::unique_ptr<OtherDirectory>> getOtherDirectories();
 
 public:
-    InfoCSV_file getInfo() const;
+    AudioLibraryInfo getInfo() const;
 
 public:
     const std::string name;

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "InfoCSV.hpp"
+#include "AudioLibraryInfo.hpp"
 #include "UI.hpp"
 
 namespace AudioSync {
@@ -12,16 +12,16 @@ namespace AudioSync {
 template<
     class Source
     , std::vector<std::unique_ptr<Source>> (getSources)()
-    , InfoCSV_file (Source::* getInfo)() const
+    , AudioLibraryInfo (Source::* getInfo)() const
     , const std::string Source::* name
 >
-void baseSyncWith(InfoCSV_file& ourInfoFile) {
+void baseSyncWith(AudioLibraryInfo& ourInfo) {
     using namespace std::string_literals;
 
     for (auto& source: getSources()) {
         const auto* const source_ptr = source.get();
-        const auto sourceInfoFile = (source_ptr->*getInfo)();
-        const auto differebce = ourInfoFile.gitDiff(sourceInfoFile);
+        const auto sourceInfo = (source_ptr->*getInfo)();
+        const auto differebce = ourInfo.gitDiff(sourceInfo);
 
         std::unique_ptr<UI_Base> ui = UI_Base::getUI();
         if (differebce.empty()) {

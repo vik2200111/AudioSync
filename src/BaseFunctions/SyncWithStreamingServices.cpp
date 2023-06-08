@@ -4,13 +4,13 @@
 
 namespace AudioSync {
 
-void syncWithStreamingService(InfoCSV_file& ourInfoFile) {
+void syncWithStreamingService(AudioLibraryInfo& ourInfo) {
     baseSyncWith<
         StreamingAPI
         , &StreamingAPI::getStreamingServices
         , &StreamingAPI::getInfo
         , &StreamingAPI::name
-    >(ourInfoFile);
+    >(ourInfo);
 }
 
 }
