@@ -7,13 +7,15 @@
 
 namespace AudioSync {
 
-struct BaseAudioInfo {
+class BaseAudioInfo {
+public:
 	std::string author;
 	std::string track_name;
 	std::string album;
 };
 
-struct InfoCSV_field {
+class InfoCSV_field {
+public:
     std::filesystem::path file_name;
     std::optional<BaseAudioInfo> audio_info;
 
